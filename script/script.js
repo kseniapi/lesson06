@@ -13,21 +13,21 @@ const gameBot = function () {
 
   return function gameBotClosure() {
   	let chosenNumber = prompt(`Угадай число от ${minRange} до ${maxRange}`);
-  	if(chosenNumber === null){
+  	if (chosenNumber === null){
   		alert("Игра окончена");
   		return;
   	}
-  	if(!isNumber(chosenNumber)){
+  	else if(!isNumber(chosenNumber)){
   		alert("Введите число!");
   		gameBotClosure();
   		return;
   	}
-  	if(chosenNumber < minRange || chosenNumber > maxRange){
+  	else if(chosenNumber < minRange || chosenNumber > maxRange){
   		alert(`Число не в диапазоне от ${minRange} до ${maxRange}`);
   		gameBotClosure();
   		return;
   	}
-  	if(chosenNumber > secretNumber){
+  	else if(chosenNumber > secretNumber){
   		alert("Загаданное число меньше");
   		gameBotClosure();
   		return;
